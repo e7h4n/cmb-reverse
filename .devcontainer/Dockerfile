@@ -15,7 +15,17 @@ RUN if [ -f /etc/apt/sources.list ]; then \
 
 # Install zsh, sudo, and common utilities
 RUN apt-get update && \
-    apt-get install -y zsh sudo software-properties-common && \
+    apt-get install -y \
+        zsh \
+        sudo \
+        software-properties-common \
+        vim \
+        git \
+        curl \
+        wget \
+        ca-certificates \
+        gnupg \
+        lsb-release && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
