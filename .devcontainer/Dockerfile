@@ -13,9 +13,9 @@ RUN if [ -f /etc/apt/sources.list ]; then \
         sed -i 's|http://ports.ubuntu.com|https://mirrors.aliyun.com|g' /etc/apt/sources.list.d/ubuntu.sources; \
     fi
 
-# Install zsh and sudo
+# Install zsh, sudo, and common utilities
 RUN apt-get update && \
-    apt-get install -y zsh sudo && \
+    apt-get install -y zsh sudo software-properties-common && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
