@@ -19,6 +19,9 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Configure passwordless sudo for pwuser
+RUN echo "pwuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
 # Set zsh as default shell for the user
 RUN chsh -s /bin/zsh pwuser
 
